@@ -5133,7 +5133,43 @@ MonoBehaviour:
       m_Calls: []
   m_HoverExited:
     m_PersistentCalls:
+      m_Calls: []
+  m_FirstSelectEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_LastSelectExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_SelectEntered:
+    m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1150272522426791670}
+        m_TargetAssemblyTypeName: Shooter, Assembly-CSharp
+        m_MethodName: GrabStart
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  m_SelectExited:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1150272522426791670}
+        m_TargetAssemblyTypeName: Shooter, Assembly-CSharp
+        m_MethodName: GrabEnd
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1150272522426791670}
         m_TargetAssemblyTypeName: Shooter, Assembly-CSharp
         m_MethodName: FireOff
@@ -5146,18 +5182,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_FirstSelectEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_LastSelectExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_SelectEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_SelectExited:
-    m_PersistentCalls:
-      m_Calls: []
   m_FirstFocusEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -5297,7 +5321,9 @@ MonoBehaviour:
   bulletPrefab: {fileID: 2127583260610022123, guid: f7673ffee3f96da448a0b93abe7b5b9a, type: 3}
   muzzlePoint: {fileID: 1150272522313341906}
   ShootSpeed: 20
-  Wait: 0.3
+  Wait: 0.45
+  uiOBJ: {fileID: 0}
+  uiManager: {fileID: 0}
 --- !u!54 &1150272522426791671
 Rigidbody:
   m_ObjectHideFlags: 0

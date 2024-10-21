@@ -6,6 +6,8 @@ TagManager:
   tags:
   - ClickBlock
   - Enermy
+  - Screen
+  - UIManager
   layers:
   - Default
   - TransparentFX
