@@ -70,7 +70,6 @@ public class Shooter : MonoBehaviour
 
         if (uiManager.countdownTime < 0)
         {
-            Debug.Log("게임 시작!");
             uiManager.isRunning = true;
         }
     }
