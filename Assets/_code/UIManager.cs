@@ -19,13 +19,6 @@ public class UIManager : MonoBehaviour
     public TextMeshProUGUI Countdown { get { return countdown; } set { countdown = value; } }
 
 
-
-    [Header("Screen Animator")]
-
-    [SerializeField] Animator screenAni;
-    public Animator ScreenAni { get { return screenAni; } set { screenAni = value; } }
-
-
     [Header("Screen Animator")]
     [SerializeField] AudioSource[] audioSoure;
     public AudioSource[] AudioSoure { get { return audioSoure; } set { audioSoure = value; } }
@@ -45,6 +38,9 @@ public class UIManager : MonoBehaviour
 
 
     // ==== ==== ====
+
+    [SerializeField] Timer timer;
+    public Timer Timers { get { return timer; } set { timer = value; } }
 
     public void CountDownUse()
     {
@@ -68,5 +64,6 @@ public class UIManager : MonoBehaviour
         audioSoure[3].Play();
         audioSoure[1].Play();
         audioSoure[1].mute = false;
+        timer.TimerUsing();
     }
 }

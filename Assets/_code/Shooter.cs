@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Threading;
 using UnityEngine;
 
 public class Shooter : MonoBehaviour
@@ -64,7 +65,6 @@ public class Shooter : MonoBehaviour
 
     public void GrabStart()
     {
-        uiManager.ScreenAni.Play("Down");
         uiManager.CountDownUse();
         uiManager.CountdownTextMesh.SetActive(true);
 
@@ -83,10 +83,14 @@ public class Shooter : MonoBehaviour
         if (uiManager.isRunning == false)
         {
             Destroy(gameObject);
-            uiManager.ScreenAni.Play("Up");
+
             uiManager.AudioSoure[1].mute = true;
             uiManager.AudioSoure[0].mute = false;
+
             uiManager.CreateUI.SetActive(true);
+
+            uiManager.Timers.TimeCount = 0;
+            uiManager.Timers.animator.Play(uiManager.Timers.frontHash);
         }
         else return;
     }
