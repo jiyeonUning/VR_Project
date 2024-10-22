@@ -1,12 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
     [SerializeField] GameObject bulletPrefab;
     [SerializeField] float returnTime;
-    private          float remainTime;
+    private float remainTime;
 
 
     void OnEnable() { remainTime = returnTime; }

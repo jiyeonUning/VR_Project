@@ -1,8 +1,6 @@
 using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
@@ -12,7 +10,7 @@ public class UIManager : MonoBehaviour
     public bool isRunning { get { return IsRunning; } set { IsRunning = value; } }
 
     [SerializeField] GameObject createUI;
-    public GameObject CreateUI { get { return CreateUI; } set { CreateUI = value; } }
+    public GameObject CreateUI { get { return createUI; } set { createUI = value; } }
 
     [SerializeField] int CountdownTime;
     public int countdownTime { get { return CountdownTime; } set { CountdownTime = value; } }
@@ -30,12 +28,14 @@ public class UIManager : MonoBehaviour
 
     [Header("Screen Animator")]
     [SerializeField] AudioSource[] audioSoure;
+    public AudioSource[] AudioSoure { get { return audioSoure; } set { audioSoure = value; } }
 
     // ==== ==== ====
 
     [Header("CountDown")]
     [SerializeField] GameObject countdownTextMesh;
     public GameObject CountdownTextMesh { get { return countdownTextMesh; } set { countdownTextMesh = value; } }
+
 
     private void Awake()
     {
@@ -48,6 +48,7 @@ public class UIManager : MonoBehaviour
 
     public void CountDownUse()
     {
+        CountdownTime = 3;
         StartCoroutine(CountdownToStart());
     }
 
@@ -66,5 +67,6 @@ public class UIManager : MonoBehaviour
         countdownTextMesh.SetActive(false);
         audioSoure[3].Play();
         audioSoure[1].Play();
+        audioSoure[1].mute = false;
     }
 }

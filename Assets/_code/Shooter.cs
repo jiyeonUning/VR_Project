@@ -1,11 +1,10 @@
 using System.Collections;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class Shooter : MonoBehaviour
 {
     [SerializeField] ParticleSystem ShotParticle; // 발포 효과 재생
-    [SerializeField] AudioSource fireSound;       // 발포음 재생료
+    [SerializeField] AudioSource fireSound;       // 발포음 재생
 
     [Header("Bullet")]
     [SerializeField] GameObject bulletPrefab;     // 총알 생성
@@ -18,6 +17,8 @@ public class Shooter : MonoBehaviour
     [Header("UI")]
     [SerializeField] GameObject uiOBJ;
     [SerializeField] UIManager uiManager;
+
+
 
     private void Awake()
     {
@@ -63,28 +64,31 @@ public class Shooter : MonoBehaviour
 
     public void GrabStart()
     {
-            uiManager.ScreenAni.Play("Down");
-            uiManager.CountdownTextMesh.SetActive(true);
-            uiManager.CountDownUse();
+        uiManager.ScreenAni.Play("Down");
+        uiManager.CountDownUse();
+        uiManager.CountdownTextMesh.SetActive(true);
 
-            if (uiManager.countdownTime < 0)
-            {
-                Debug.Log("게임 시작!");
-                uiManager.isRunning = true;
-            }
+        if (uiManager.countdownTime < 0)
+        {
+            Debug.Log("게임 시작!");
+            uiManager.isRunning = true;
+        }
     }
 
 
     // 손에서 총이 떨어졌을 때, 게임은 중지되고 처음을 다시 돌아간다
     public void GrabEnd()
     {
-            uiManager.isRunning = false;
+        uiManager.isRunning = false;
 
-            if (uiManager.isRunning == false)
-            {
-                Debug.Log("게임 종료!");
-                uiManager.ScreenAni.Play("Up");
-            }
-            else return;
+        if (uiManager.isRunning == false)
+        {
+            Destroy(gameObject);
+            uiManager.ScreenAni.Play("Up");
+            uiManager.AudioSoure[1].mute = true;
+            uiManager.AudioSoure[0].mute = false;
+            uiManager.CreateUI.SetActive(true);
+        }
+        else return;
     }
 }

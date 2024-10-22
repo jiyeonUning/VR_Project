@@ -5324,6 +5324,7 @@ MonoBehaviour:
   Wait: 0.45
   uiOBJ: {fileID: 0}
   uiManager: {fileID: 0}
+  Gun: {fileID: 4174060064283736688}
 --- !u!54 &1150272522426791671
 Rigidbody:
   m_ObjectHideFlags: 0
